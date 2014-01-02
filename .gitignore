@@ -1,15 +1,15 @@
-/* Already on github */
+# Already on github
 websites/govhack/
 
-/* Image uploads not needed */
+# Image uploads not needed
 images/
 websites/oldsite/images
 
-/* Move me I cbf */
+# Move me I cbf 
 websites/oldsite/codiad
 
 
-/* Big games */
+# Big games
 *.unity3d
 *.swf
 
