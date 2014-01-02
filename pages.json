@@ -1,0 +1,162 @@
+[
+{
+	"link_name" : "Home",
+	"query_name" : "home",
+	"type" : "local",
+	"scripts" : ["main.js"],
+	"stylesheets" : ["default.css", "normalize.css"],
+	"location" : "home.inc",
+	"haschild" : "false"
+}, 
+{
+	"link_name" : "Minecraft",
+	"query_name" : "minecraft_main",
+	"type" : "local",
+	"scripts" : ["jsapi.js", "jquery-1.9.1.js", "mc_log_chart.js"],
+	"stylesheets" : ["default.css", "minecraft_stats_style.css", "normalize.css"],
+	"location" : "minecraft.inc",
+	"haschild" : "true",
+	"children" : [{
+		"link_name" : "DynMap",
+		"query_name" : "minecraft_dynmap",
+		"type" : "external",
+		"location" : ":8123",
+		"haschild" : "false"
+	}]
+},
+{
+	"link_name" : "Misc",
+	"query_name" : "misc_stuff",
+	"type" : "local",
+	"scripts" : [],
+	"stylesheets" : ["default.css", "normalize.css"],
+	"location" : "misc.inc",
+	"haschild" : "true",
+	"children": [
+	{
+		"link_name": "Raspberry Pi",
+		"query_name" : "r_pi",
+		"type" : "external",
+		"location" : "/raspberrypi/",
+		"haschild" : "false"
+	},
+	{
+		"link_name": "My Steam Games Picker",
+		"query_name" : "steam_games",
+		"type" : "local",
+		"stylesheets" : ["default.css", "normalize.css"],
+		"location" : "/misc/steam_games.php",
+		"haschild" : "false"
+	}]
+},
+{
+	"link_name" : "Stuff that I've Made",
+	"query_name" : "my_creations",
+	"type" : "local",
+	"scripts" : [""],
+	"stylesheets" : ["default.css", "stuff.css", "normalize.css"],
+	"location" : "stuff.inc",
+	"haschild" : "true",
+	"children": [
+	{
+		"link_name" : "Games",
+		"query_name" : "games",
+		"type" : "local",
+		"stylesheets" : ["default.css", "list_items.css", "normalize.css"],
+		"location" : "games.inc",
+		"haschild" : "true",
+		"children" : [
+		{
+			"link_name" : "Codename BMOS (2013 - Flash)",
+			"query_name" : "game_mbos",
+			"type" : "local",
+			"stylesheets" : ["default.css", "normalize.css"],
+			"location" : "./games/mbos/mbos.inc",
+			"thumb_image" : "/game_thumbs/mbos_scr_thumb.png",
+			"short_desc" : "Falling with no style due to time constraints. Made at a game-jam.",
+			"haschild" : "false"
+		},
+		{
+			"link_name" : "Mesonoxian (2012 - Windows/C++)",
+			"query_name" : "game_mesonoxian",
+			"type" : "local",
+			"stylesheets": ["default.css", "normalize.css"],
+			"scripts" : [""],
+			"location" : "./games/mesonoxian/mesonoxian.inc",
+			"thumb_image" : "/game_thumbs/mesonoxian_thumb.png",
+			"short_desc" : "A 2D platformer where you play as a thief in a dystopian future. Invovles wall-jumping and obstacle avoidance.",
+			"haschild" : "false"
+		},
+		{
+			"link_name" : "Tanks For the Sheep (2012 - Unity)",
+			"query_name" : "game_tanks4sheep",
+			"type" : "local",
+			"stylesheets": ["unity_tanks4sheep.css", "default.css", "normalize.css"],
+			"scripts" : [ "tanks_4sheep.js", "unity_game.js", "jquery-1.9.1.min.js"],
+			"location" : "./games/tanks_for_the_sheep/tanks_for_the_sheep.inc",
+			"thumb_image" : "/game_thumbs/tanks_for_sheep_thumb.png",
+			"short_desc" : "An RTS where you control sheep that can automatically fire at enemy sheep.",
+			"haschild" : "false"
+		},
+		{
+			"link_name" : "Brain-In-Jar Defense (2011 - Unity)",
+			"query_name" : "game_brainjar",
+			"type" : "local",
+			"stylesheets" : ["tanksUnity.css", "default.css", "normalize.css"],
+			"scripts" : [ "jquery-1.9.1.min.js", "unity_brain_jar.js", "unity_game.js" ],
+			"location" : "./games/brain_jar/brain_jar.inc",
+			"thumb_image" : "/game_thumbs/brain_jar_thumb.png",
+			"short_desc" : "Defend a giant supercomputer brain in a jar in the zombie apocalypse. Switch between remotely controlled robots with a button press.",
+			"haschild" : "false"
+		},
+		{
+			"link_name" : "Colony Defender (2011 - Flash)",
+			"query_name" : "game_colony_defender",
+			"type" : "local",
+			"stylesheets" : ["default.css", "flash_game.css", "normalize.css"],
+			"location" : "./games/colony_defender/colony_defender.inc",
+			"thumb_image" : "/game_thumbs/colony_defender_thumb.png",
+			"short_desc" : "A space shooter where you navigate around a map, with enemies on a mini-map.",
+			"haschild" : "false"
+		},
+		{
+			"link_name" : "Pangolin Panic (2010 - Flash)",
+			"query_name" : "game_pangolin_panic",
+			"type" : "local",
+			"stylesheets" : ["default.css", "flash_game.css", "normalize.css"],
+			"location" : "./games/pangolin_panic/pangolin_panic.inc",
+			"thumb_image" : "/game_thumbs/pangolin_panic_thumb.png",
+			"short_desc" : "In this game, you shoot Pangolins out of a barrel carefully to avoid obstacles and send them to safety.",
+			"haschild" : "false"
+		}
+		]
+	},
+	{
+		"link_name" : "Websites",
+		"query_name" : "web",
+		"type" : "local",
+		"location" : "websites.inc",
+		"stylesheets": ["list_items.css","default.css", "normalize.css"],
+		"haschild" : "true",
+		"children" : [
+		{
+			"link_name" : "Australian Internet Statistics (GovHack 2013)",
+			"query_name" : "govhack",
+			"type" : "external",
+			"location" : "/websites/govhack/index.php",
+			"thumb_image" : "/website_thumbs/govHackCentered.png",
+			"short_desc" : "Myself and 2 friends competed in <a href=\"http://www.govhack.org\">GovHack</a>. Our team put together a graph that displays broadband usage statistics. Currently MySql database is down.",
+			"haschild" : "false"
+		},
+		{
+			"link_name" : "Old BeefyServer (2013)",
+			"query_name" : "old_beefyweb",
+			"type" : "external",
+			"location" : "/websites/oldsite/index.php",
+			"thumb_image" : "/website_thumbs/oldBeefyWebpng.png",
+			"short_desc" : "My first serious attempt at a personal website. This is much better obviously.",
+			"haschild" : "false"
+		}]
+	}]
+}
+]

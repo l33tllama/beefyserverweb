@@ -1,0 +1,10 @@
+#unityPlayer{
+    position: relative;
+    right: 135px;
+    width: 1048px;
+    padding-left: 8px;
+    padding-right: 8px;
+    border: solid 4px #bcbcbc;
+    border-radius: 4px;
+    background-color: #000000;
+} 

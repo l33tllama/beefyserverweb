@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<?php
+/* Plan: Single file for most of the site, dynamically load new pages from here when needed*/
+$pagesJson = file_get_contents("pages.json");
+//var_dump($pagesJson);
+$pages = json_decode($pagesJson);
+//var_dump($pages);
+foreach($pages as $pageInfo){
+	echo $pageInfo -> {"link_name"};
+	if($pageInfo -> {'type'} == "external"){
+		echo $pageInfo -> {'child'};
+	}
+}
+$main_js = array("main.js");
+//Get current page from $POST/GET?
+$current_page = "Home";
+$js_to_load = array();
+switch($current_page){
+	case "index":
+		$js_to_load = $main_js;
+		break;
+	default:
+		$js_to_load = null;
+		break;		
+}
+?>
+<html>
+	<head>
+	<?php foreach($js_to_load as $script){
+		echo "<script>".$script."</script>";
+	}?>
+	</head>
+	<body>
+		<div id="title_nav_bar">
+			<div id="title">
+				HELLO WORLD.
+			</div>
+			<div id="navigation">[Home] [Minecraft [Dynmap]] [Portfolio] [Misc] [Subsonic]</div>
+		</div>
+		
+	</body>
+</html>
+
+

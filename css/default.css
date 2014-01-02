@@ -1,0 +1,190 @@
+* {
+	/* Make every box the specified width, not including margins, padding, border width, etc */
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	
+	/*font-family: Arial;*/
+}
+html{
+	/* overflow-y: scroll; */
+}
+#content browser {
+ margin-right: -14px !important;
+ overflow-y: scroll;
+ overflow-x: hidden;
+}
+/* TODO: use less alpha colours and maybe different colour scheme */
+body{
+	background-image: url('../images/hoffman.png');
+	background-repeat: repeat;
+	margin: 0px;
+	min-width: 600px;
+	padding: 0;
+	/*
+	overflow: auto; */
+	
+	/*overflow-y: scroll;*/	
+}
+div#title{
+	background: rgb(0, 0, 0);
+	background: rgba(0, 0, 0, 0.75); /*background color of menu header (1st level)*/	
+	padding: 0px 0px 20px 0px;
+	position:relative;
+	padding-left: 20px;
+	margin: 0;
+	color: #fff;
+	color: rgba(255, 255, 255, 0.65);	
+	text-shadow: 0 1px 2px #ccc;
+	height: 140px;
+	z-index: -1;
+	overflow:hidden;
+}
+div#title h1{
+	font-size: 155px;
+	margin: -20px 0 0 -20px;
+	font-weight:bold;
+	padding: 0;
+	font-family: sans-serif;
+}
+div#title p{
+	position: absolute;
+	left:0;
+	bottom: 0px;
+	font-size: 16px;
+	font-style:italic;
+	padding-left: 5px;
+}
+div#navigation{
+	width: 100%;
+	float: left;
+	/*height: 35px;*/
+	background-color: rgb(77,23,12);
+	background-color: rgba(77, 23, 12, 0.85);
+		-webkit-box-shadow: 2px 2px 10px rgba(77, 23, 12, 0.6);
+	-moz-box-shadow:    2px 2px 10px rgba(77, 23, 12, 0.6);
+	box-shadow:         2px 2px 10px rgba(77, 23, 12, 0.6);	
+}
+ul.navMenu, ul.navMenu ul {
+	list-style:none;
+	margin:0; padding:0;
+	position: relative;
+	z-index: 1;	
+}
+ul.navMenu li{
+	position:relative;
+	float: left;	
+	margin-left: -1px;	
+}
+ul.navMenu li a{
+	display: block;
+	padding: 5px 15px 5px 15px;	
+	text-align:center;
+	color: #ffffff;
+	font-family: sans-serif;
+	font-size: 20px;
+	font-weight: 600;
+	text-shadow: -1px 1px 1px #999;
+	text-decoration: none;
+	min-width: 150px;
+	max-width: 350px;
+	
+}
+ul.navMenu ul { 
+	display:none; /*initially menu item is hidden*/
+	position: absolute; /*absolute positioning is important for menu to float*/	
+	padding:1px;
+	top: 100%; 
+	left: 0; 
+	margin-top : -6px;
+}
+ul.navMenu ul li a{
+	float:none;
+	min-width: 150px;
+	height: auto;
+	padding-bottom: 5px;
+	background-color: rgb(77, 23, 12);
+	background-color: rgba(77, 23, 12, 0.85);
+}
+ul.navMenu ul ul{
+	left: 100%;
+	top: 0;
+	margin-top : -1px;
+}
+/* Hover effect for menu*/
+ul.navMenu li:hover > ul { 
+	display:block;
+	min-width: 100px;
+	max-width: 200px;
+}
+ul.navMenu li:hover{
+	background-color: rgb(77, 23, 12);
+	/*background-color: rgba(77, 23, 12, 1);*/
+}
+div#main{
+	position:relative;
+	margin: 0 auto;
+	margin-top: 35px;
+	padding-top: 0;
+	min-width: 960px;
+	max-width: 960px;
+	
+	
+}
+#main a:hover{
+	border-radius: 5px;
+	/*box-shadow: 1px 5px 1px #aaf;*/
+}
+
+div#main_content{
+	margin: 0px 10px 0px 10px;
+	padding: 0px 10px 5px 10px;
+	background-color: #ffffff;
+	border: 1px #bbbbbb solid;
+	border-bottom-left-radius: 7px;
+	border-bottom-right-radius: 7px;
+	-webkit-box-shadow: 2px 2px 10px rgba(77, 23, 12, 0.6);
+	-moz-box-shadow:    2px 2px 10px rgba(77, 23, 12, 0.6);
+	box-shadow:         2px 2px 10px rgba(77, 23, 12, 0.6);
+	
+}
+
+div.post p.headingText{
+	background-color: rgba(77, 23, 12, 0.8);
+	margin: 10px -11px 10px -11px;
+	padding: 5px 15px 5px 15px;
+	border-top: 1px solid rgb(77, 23, 12);
+	border-bottom: 1px solid rgb(77, 23, 12);
+	font-size: 16pt;
+	color: #fff;
+	text-shadow: -1px 0px 2px #bbb;
+	-webkit-box-shadow: inset 0px 0px 7px rgba(77, 23, 12, 1);
+	-moz-box-shadow:    inset 0px 0px 7px rgba(77, 23, 12, 1);
+	box-shadow:         inset 0px 0px 7px rgba(77, 23, 12, 1);
+	font-family:sans-serif;
+	
+}
+div.post div.contentText{
+	padding: 5px 15px 5px 15px;
+	
+}
+div.post p.subHeadingText{
+	font-size:12pt;
+	font-weight:bold;
+	margin: 2px 0 2px 0;
+}
+div#footer{
+    background-color: rgb(77, 23, 12);
+	background-color: rgba(77, 23, 12, 0.25);
+	/*float:bottom;*/
+	bottom: 0;
+	padding: 2px;
+	text-align:right;
+	color: rgb(77, 23, 12);
+	font-size: 9pt;
+	margin: 10px -11px -6px -10px;
+	position: relative;
+	border: 1px solid rgb(77, 23, 12);
+	border-bottom-left-radius: 6px;
+	border-bottom-right-radius: 6px;
+}

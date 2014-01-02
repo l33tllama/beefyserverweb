@@ -1,0 +1,151 @@
+* {
+	/* Make every box the specified width, not including margins, padding, border width, etc */
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: Arial;
+}
+html{
+	overflow-y: scroll; 
+}
+
+/* Current palette http://www.colourlovers.com/palette/148712/Gamebookers */
+body{
+	/*background-color: #CCCCCC; */
+	background-image: url('../images/cubes.png');
+	background-repeat: repeat;
+}
+
+div#heading{
+	margin: 0 auto;
+	width: 800px;
+	color: #FF9900;
+}
+
+h1#heading{
+	background-color: rgba(66,66,66,0.8);
+	text-align: center;
+	padding: 5px;
+	border: 3px solid;
+	border-radius: 8px;
+	border-color: #3299BB;
+	-webkit-animation: titleFadeIn;
+	-webkit-animation-duration: 0.5s;
+	animation-duration: 0.5s;
+	animation-name: titleFadeIn;
+}
+@keyframes titleFadeIn{
+	from {
+		color: rgba(0,0,0,0);
+	}
+	to {
+		color: #FF9900;
+	}
+}
+@-webkit-keyframes titleFadeIn{
+	from {
+		color: rgba(0,0,0,0);
+	}
+	to {
+		color: #FF9900;
+	}
+}
+div#wrapper{
+	margin: 10px auto;
+	width: 800px;
+	border: 1px solid;
+	background-color: #BCBCBC;
+	border-radius: 8px;
+	border-color: #BCBCBC;
+}
+
+/* ---------- NAVIGATION ---------- */
+div#navigation{
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-bottom: 12px;
+	height: 54px;
+	padding-top: 5px;
+	padding-left: 4px;
+	padding-right: 5px;
+	padding-bottom: 0px;
+	border: solid #ffffff;
+	border-radius: 8px;
+	border-color: #BCBCBC;
+	width: 100%;
+	float: left;
+}
+.menuBar {
+	float: left;
+	width: 100%;
+    border: solid #ffffff;
+    border-radius: 2px;
+    padding-top: 11px;
+    padding-bottom: 0px;
+    background-color:#ffffff;
+    font-weight:bold;
+}
+a.navlink, a.current_navlink{
+	position: relative;
+	border: 1px solid;
+	border-radius: 10px;
+	border-bottom-color: #ffffff;
+	border-bottom-left-radius:0px;
+	border-bottom-right-radius: 0px;
+	border-color: #BCBCBC;
+	text-decoration: none;
+	font-weight:bold;
+}
+a.navlink{
+	padding: 8px 8px 15px 8px;
+	background-color: #E9E9E9;
+}
+a.current_navlink{
+	padding: 8px 8px 17px 8px;
+	background-color: #ffffff;
+	border-bottom-color: #ffffff;
+}
+.localLinks, .otherLinks {
+	display:inline;
+	position:relative;
+	margin-right: 4px;
+	margin-left: 4px;
+	padding-top: 5px;
+	padding-bottom: 7px;
+	font-weight:bold;
+}
+.localLinks {
+	top: -4px;
+    background-color:#ffffff;
+}
+.otherLinks {
+	top: -9px;
+	max-height: 20px;
+	float: right;
+    background-color:rgba(0,0,0,0);  
+}
+img.nav_img{
+	position: relative;
+	height: 28px;
+	top: 9px;
+	left: -2px;
+}
+/* ---------- MAIN CONTENT ---------- */
+div#main{
+	margin: 2px;
+	padding: 8px;
+	background-color: #FFFFFF;
+	border: 2px solid;
+	border-radius: 4px;
+	border-color: #BCBCBC;
+}
+/* ---------- FOOTER ------------------ */
+div#footer{
+	padding: 0px 4px 4px 4px;
+	margin: 4px;
+}
+h#footer{
+	font-size: 10pt;
+	font-style: italic;
+	
+}

@@ -1,0 +1,213 @@
+div.contentText{
+	font-family: Arial;
+	/*margin-left: -25px;
+	padding-left: 25px;*/
+}
+div#player_renders{
+	background-image: url('../images/minecraft/mc_bkgnd1.png');
+	background-position: 50% 100%;
+	border: 1px #f3f3f3 solid;
+	width: 939px;
+	margin: -25px;
+	margin-bottom:-15px;
+	padding-left: 25px;
+}
+table.mcStatusTable{
+	border-radius: 4px;
+	padding-left: 25px;
+}
+table#mc_plugins{
+	font-size: 10pt;
+}
+#mc_players, #inline_chart, .mcStatusTable{
+	width: 938px;
+	margin-left: -25px;
+	padding-left: 25px;
+}
+table#mc_players, ul#inline_chart{
+	background-color: #f3f3f3;
+}
+table#mc_players{
+	border-spacing: 0px;
+}
+td.mc_player{
+	opacity: 1.0;
+	margin: 2px;
+	padding: 2px;
+	margin-right: 0px;
+	margin: 5px;
+	position: relative;	
+}
+td.mc_player h5{
+	padding: 0;
+	margin: 0;
+	text-align: center;
+}
+td.mc_player#n0{
+	animation-duration: 0.5s;
+	-webkit-animation-duration: 0.5s;
+	animation-name: mcplayerFadeIn;
+	-webkit-animation-name: mcPlayerFadeIn;
+}
+td.mc_player#n1{
+	animation-duration: 0.75s;
+	-webkit-animation-duration: 0.75s;
+	animation-name: mcplayerFadeIn;
+	-webkit-animation-name: mcPlayerFadeIn;
+}
+
+td.mc_player#n2{
+	animation-duration: 1.0s;
+	-webkit-animation-duration: 1.0s;
+	animation-name: mcplayerFadeIn;
+	-webkit-animation-name: mcPlayerFadeIn;
+}
+td.mc_player#n3{
+	animation-duration: 1.25s;
+	-webkit-animation-duration: 1.25s;
+	animation-name: mcplayerFadeIn;
+	-webkit-animation-name: mcPlayerFadeIn;
+}
+
+td.mc_player#n4{
+	animation-duration: 1.5s;
+	-webkit-animation-duration: 1.5s;
+	animation-name: mcplayerFadeIn;
+	-webkit-animation-name: mcPlayerFadeIn;
+}
+td.mc_player#n5{
+	animation-duration: 1.75s;
+	-webkit-animation-duration: 1.75s;
+	animation-name: mcplayerFadeIn;
+	-webkit-animation-name: mcPlayerFadeIn;
+}
+td.mc_player#n6{
+	animation-duration: 2.0s;
+	-webkit-animation-duration: 2.0s;
+	animation-name: mcplayerFadeIn;
+	-webkit-animation-name: mcPlayerFadeIn;
+}
+td.mc_player#n7{
+	animation-duration: 2.25s;
+	-webkit-animation-duration: 2.25s;
+	animation-name: mcplayerFadeIn;
+	-webkit-animation-name: mcPlayerFadeIn;
+}
+td.mc_player#n8{
+	animation-duration: 2.5s;
+	-webkit-animation-duration: 2.5s;
+	animation-name: mcplayerFadeIn;
+	-webkit-animation-name: mcPlayerFadeIn;
+}
+td.mc_player#n9{
+	animation-duration: 2.75s;
+	-webkit-animation-duration: 2.75s;
+	animation-name: mcplayerFadeIn;
+	-webkit-animation-name: mcPlayerFadeIn;
+}
+td.mc_player#n10{
+	animation-duration: 3.0s;
+	-webkit-animation-duration: 3.0s;
+	animation-name: mcplayerFadeIn;
+	-webkit-animation-name: mcPlayerFadeIn;
+}
+td.mc_player#n11{
+	animation-duration: 3.25s;
+	-webkit-animation-duration: 3.25s;
+	animation-name: mcplayerFadeIn;
+	-webkit-animation-name: mcPlayerFadeIn;
+}
+td.mc_player#n12{
+	animation-duration: 3.5s;
+	-webkit-animation-duration: 3.5s;
+	animation-name: mcplayerFadeIn;
+	-webkit-animation-name: mcPlayerFadeIn;
+}
+td.mc_player#n13{
+	animation-duration: 3.75s;
+	-webkit-animation-duration: 3.75s;
+	animation-name: mcplayerFadeIn;
+	-webkit-animation-name: mcPlayerFadeIn;
+}
+td.mc_player#n14{
+	animation-duration: 4.0s;
+	-webkit-animation-duration: 4.0s;
+	animation-name: mcplayerFadeIn;
+	-webkit-animation-name: mcPlayerFadeIn;
+}
+td.mc_player#n15{
+	animation-duration: 4.25s;
+	animation-name: mcplayerFadeIn;
+	-webkit-animation-duration: 4.25s;
+	-webkit-animation-name: mcPlayerFadeIn;
+}
+
+@keyframes mcplayerFadeIn{
+	from{
+		opacity: 0;
+	}
+	to{
+		opacity: 1;
+	}
+}
+@-webkit-keyframes mcPlayerFadeIn{
+	from{
+		opacity: 0;
+	}
+	to{
+		opacity: 1;
+	}
+}
+ul#inline_chart, ul#inline_chart li{
+}
+ul#inline_chart li {
+	display:inline-block;
+	min-height: 320px;
+	vertical-align: top;
+	
+	/*Hack for IE7 + ?*/
+	zoom: 1;
+	display: inline;
+}
+li#chart_div{
+	/*width: 600px;*/
+}
+li.chart_tooltip{
+	padding: 2px;
+	width: 100px;
+}
+li#prev_day, li#next_day{
+	width: 32px;
+	height: 320px;
+
+}
+button#prev_day, button#next_day{
+	width: 32px;
+	height: 320px;
+	border: none;
+}
+button#prev_day_empty, button#next_day_empty{
+	width: 32px;
+	height: 320px;
+	background-color: rgba(0, 0, 0, 0);
+	border: none;
+}
+button#prev_day{
+	background: url("../images/minecraft/left-button-deselect.png") no-repeat 0 0 ;
+}
+button#next_day{
+	background: url("../images/minecraft/right-button-deselect.png") no-repeat 0 0 ;
+}
+button#prev_day:hover{
+	background: url("../images/minecraft/left-button.png") no-repeat 0 0 ;
+}
+
+button#next_day:hover{
+	background: url("../images/minecraft/right-button.png") no-repeat 0 0 ;
+}
+button#next_day:active{
+	background: url("../images/minecraft/right-button-deselect.png") no-repeat 0 0 ;
+}
+button#prev_day:active{
+	background: url("../images/minecraft/left-button-deselect.png") no-repeat 0 0 ;
+}
