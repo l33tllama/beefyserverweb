@@ -3,11 +3,10 @@ websites/govhack/
 
 # Image uploads not needed
 images/
-websites/oldsite/images
+websites/oldsite/images/
 
 # Move me I cbf 
-websites/oldsite/codiad
-
+websites/oldsite/codiad/
 
 # Big games
 *.unity3d
