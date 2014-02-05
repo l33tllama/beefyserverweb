@@ -2,9 +2,9 @@ HANDY GIT COMMANDS
 For people who want to get stuff done, not learn a new thing..
 
 REMOVE STUFF FROM CACHE (After adding stuff to .gitignore) 
-git rm -r --cached
+git rm -r --cached .
 git add .
-git add -m 'Removed crap'
+git commit -m 'Removed crap'
 
 ADD NEW STUFF
 git add .

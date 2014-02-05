@@ -19,7 +19,7 @@ var months = ["January", "February", "March", "April", "May", "June", "July", "A
 
 window.onload = function(){
 	check_page_setters();
-	//alert("Annoying alert");
+	// alert("Annoying alert");
 }
 
 // Load the Visualization API and the piechart package.
@@ -46,15 +46,52 @@ function drawChart() {
 	var year_full = current_date.getFullYear();
 	
 	var current_date_string = year_full + "-" + monthStr(current_date.getMonth() + 1) + "-" + monthStr(date_full);
-		
+	// alert("trying a ajax query!");	
 	// Create the data table.
-    var jsonData = $.ajax({
-    	url: "./php/get_mc_player_data.php?date=" + current_date_string,
-      	dataType:"json",
-      	async: false
-    }).responseText;
+	var jsonData = $.ajax({
+	url: "./misc-php/minecraft/get_mc_player_data.php?date=" + current_date_string,
+	dataType:"json",
+	async: false
+	}).responseText;
+	// alert(jsonData);
+	var jsonDataManual = { 
+		cols:[	{id:"",label:"Time", pattern: "",type:"string"},
+			{id:"",label:"Player Count", pattern:"",type:"number"},
+			{id:"",label:"Players", pattern: "", type: "string", p:{ role:"tooltip", html:true}}],
+		rows:[	{c:[
+				{v:"15:29",f:null},
+				{v:0,f:null},
+				{v:"15:29 : 0 : ",f:null}]
+			},
+			{c:[
+				{v:"15:48",f:null},
+				{v:0,f:null},
+				{v:"15:48 : 0 : ",f:null}]
+			},
+			{c:[
+				{v:"16:29",f:null},
+				{v:0,f:null},
+				{v:"16:29 : 0 : ",f:null}]
+			}
+		]
+	}
+	
+	var testData = {
+       cols: [{id: 'task', label: 'Task', type: 'string'},
+                {id: 'hours', label: 'Hours per Day', type: 'number'}],
+       rows: [{c:[{v: 'Work'}, {v: 11}]},
+              {c:[{v: 'Eat'}, {v: 2}]},
+              {c:[{v: 'Commute'}, {v: 2}]},
+              {c:[{v: 'Watch TV'}, {v:2}]},
+              {c:[{v: 'Sleep'}, {v:7, f:'7.000'}]}
+             ]
+     }
     
-	var data = new google.visualization.DataTable(jsonData);	
+	// alert(JSON.stringify(eval("(" + jsonData + ")")));
+	
+	var data = new google.visualization.DataTable(jsonData, 0.6);
+
+	//alert ("created gcharts datatable.");
 	
 	var formatted_date = day_full + ", " + date_full + " " + month_full + ", " + year_full;
 	
@@ -63,16 +100,17 @@ function drawChart() {
 	}
 	
   	//Set chart options
-  	var options = { 'title':'Players on BeefyServer on ' + formatted_date,
-    	              'width':699,
-        	          'height':320,
-            	      vAxis :{maxValue:16},
-                	  tooltip: {isHtml: true},
-				  	legend: 'none'};
+  	var options = { 'title': 'Players on BeefyServer on ' + formatted_date,
+			'width': 500,
+			'height': 320,
+			vAxis : { maxValue: 16 },
+			tooltip: { isHtml: true },
+			legend: 'none' };
 
-  // Instantiate and draw our chart, passing in some options.
+	// Instantiate and draw our chart, passing in some options.
   	var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
   	chart.draw(data, options);
+	// alert("chart drawn!?!?!");
 }
 
 //Convert month string to date format for numbers less than 10

@@ -11,7 +11,7 @@ if($_COOKIE[$log_cookie] == null || $_COOKIE[$log_cookie] == "NaN-NaN-NaN"){
 require_once ('./misc-php/minecraft/minecraftQuery.class.php');
 //require_once ('./misc-php/minecraft/test.php');
 
-$beefyServer = "192.168.1.100";//$_SERVER['SERVER_ADDR'];
+$beefyServer = "localhost";//$_SERVER['SERVER_ADDR'];
 $mc_query = new minecraftQuery();
 $server_up = TRUE;
 $query_error = null;
@@ -24,23 +24,27 @@ try {
 
 ?>
 <div class="post">
-    <p class="headingText">Minecraft Server Status</p>
-    <div class="contentText">
-	WIP!<br/>
-	<a href="<?php echo "http://".$_SERVER['SERVER_NAME'] . ":8123";?>"/><img src="./images/link_icons/dynmap.png"/>DynMap</a><br/><br/>
-	<!-- ######## MC SERVER STATUS TABLE ######## -->
-	<table id="mc_players">
-		<tr>
-			<td colspan="4"><b>Players</b> (with rendered skins)</td>
+	<p class="headingText">Minecraft Server Status</p>
+	<div class="contentText">
+		<div class="section-a">
+			WIP!<br/>
+			<a href="<?php echo "http://".$_SERVER['SERVER_NAME'] . ":8123";?>"/><img src="./images/link_icons/dynmap.png"/>DynMap</a><br/><br/>
+		</div>
 <?php if($server_up == TRUE){
+		/* - -Start section B - */
+		echo "\t\t<div id=\"section-b\">\n";	
+		echo "\t\t\t<!-- ######## MC SERVER STATUS TABLE ######## -->\n";
+		echo "\t\t\t<table id=\"mc_players\">\n";
+		echo "\t\t\t\t<tr>\n";
+		echo "\t\t\t\t\t<td colspan=\"4\"><b>Players</b> (with rendered skins)</td>\n";
 		$current_query = $mc_query -> getInfo();
 		$player_count = $current_query['Players'];
 		$max_players = $current_query['MaxPlayers'];
 	
 		// ###### MC Players Table #######
-		echo "\t\t\t<td colspan=\"4\" align=\"center\">$player_count/$max_players</td>\n";
-		echo "\t\t</tr>\n";
-		echo "\t\t<tr>\n";					
+		echo "\t\t\t\t\t<td colspan=\"4\" align=\"center\">$player_count/$max_players</td>\n";
+		echo "\t\t\t\t</tr>\n";
+		echo "\t\t\t\t<tr>\n";					
 		$players = $mc_query -> getPlayerList();
 		$count = 0;
 		
@@ -49,8 +53,8 @@ try {
 			$empty_slot = false;
 			// New row
 			if ($i != 0 && $i % 8 == 0) {
-				echo "\t\t</tr>\n";
-				echo "\t\t<tr>\n";
+				echo "\t\t\t\t</tr>\n";
+				echo "\t\t\t\t<tr>\n";
 			}
 			// Check player name
 			if($players[$i] == ""){
@@ -60,7 +64,7 @@ try {
 				$slot_name = $players[$i];
 			}
 
-			echo "\t\t\t<td class = \"mc_player\" id = \"n$i\"><h5>$slot_name</h5>";
+			echo "\t\t\t\t\t<td class = \"mc_player\" id = \"n$i\"><h5>$slot_name</h5>";
 			
 			$player_image = "";
 			if ($empty_slot == true) {
@@ -71,57 +75,58 @@ try {
 			echo "<img src = \"$player_image\" alt=\"Empty Slot\"/>";
 			echo "</td>\n";
 		}
-			echo "\t\t</tr>\n";
-			echo "\t</table>\n";
-			echo "\t<table class=\"mcStatusTable\">\n";
-			echo "\t\t<tr>\n";
-			echo "\t\t\t<td>Server Mod</td>\n";
-			echo "\t\t\t<td>" . $current_query['Software'] . "</td>\n";
-			echo "\t\t</tr>\n";
-			echo "\t\t<tr>\n";
-			echo "\t\t\t<td>Server Version</td>\n";
-			echo "\t\t\t<td>" . $current_query['Version'] . "</td>\n";
-			echo "\t\t</tr>\n";
+		echo "\t\t\t\t</tr>\n";
+		echo "\t\t\t</table>\n";
+		echo "\t\t</div>\n";
+		echo "\t\t<div id=\"section-a\">\n";
+		echo "\t\t\t<table id=\"mcStatusTable\">\n";
+		echo "\t\t\t\t<tr>\n";
+		echo "\t\t\t\t\t<td>Server Mod</td>\n";
+		echo "\t\t\t\t\t<td>" . $current_query['Software'] . "</td>\n";
+		echo "\t\t\t\t</tr>\n";
+		echo "\t\t\t\t<tr>\n";
+		echo "\t\t\t\t\t<td>Server Version</td>\n";
+		echo "\t\t\t\t\t<td>" . $current_query['Version'] . "</td>\n";
+		echo "\t\t\t\t</tr>\n";
+		echo "\t\t\t\t<tr>\n";
+		echo "\t\t\t\t\t<td>Port</td>\n";
+		echo "\t\t\t\t\t<td>" . $current_query['HostPort'] . "</td>\n";
+		echo "\t\t\t\t</tr>\n";
+		echo "\t\t\t\t<tr>\n";
+		echo "\t\t\t\t\t<td>Plugins</td>\n";
+		//echo "\t\t\t\t\t\t<table id=\"mc_plugins\">\n";
+		echo "\t\t\t\t\t\t\t<tr>\n";
+		echo "\t\t\t\t\t\t\t\t<td>\n";
+		$plugins = $current_query['Plugins'];
+		natsort($plugins);
+		$counter = 0;
+		foreach ($plugins as $plugin) {
+			echo "\t\t\t\t\t\t\t\t\t$plugin<br/>\n";
+			if ($counter > 8) {
+				echo "\t\t\t\t\t\t\t\t</td>\n";
+				echo "\t\t\t\t\t\t\t\t<td>\n";
+				$counter = 0;
+			}
+			$counter++;
+		}
+		echo "\t\t\t\t\t\t\t\t</td>\n";
+		echo "\t\t\t\t\t\t\t</tr>\n";
+		// echo "\t\t\t\t\t\t</table>\n";
+		echo "\t\t\t\t\t</td>\n";
+		echo "\t\t\t\t</td>\n";
+		echo "\t\t\t</tr>\n";
+		echo "\t\t</table>\n";
+		echo "\t</div>\n";
 			
 				
 		} else {
-			echo "Server is down. Let Beefy Ole know if you want it back up promptly. <br/>Details: $query_error";}?>				
-		<tr>
-			<td>Port</td>
-			<td><?php echo $current_query['HostPort']; ?></td>
-		</tr>					
-		<tr>
-			<td>Plugins</td>
-			<td>
-				<table id="mc_plugins">
-					<tr>
-						<td><?php
-							echo "\n";
-							$plugins = $current_query['Plugins'];
-							natsort($plugins);
-							$counter = 0;
-
-							foreach ($plugins as $plugin) {
-								echo "\t\t\t\t\t\t\t$plugin<br/>\n";
-								if ($counter > 8) {
-									echo "\t\t\t\t\t\t</td>\n";
-									echo "\t\t\t\t\t\t<td>\n";
-									$counter = 0;
-								}
-								$counter++;
-							}
-							?>
-						</td>
-					</tr>
-				</table>
-			</td>
-		</tr>
-	</table>
-	
-	<!-- ######### Player log chart ######## -->
+			echo "Server is down. Let Beefy Ole know if you want it back up promptly. <br/>Details: $query_error";
+		}
+?>
+<!-- ######### Player log chart ######## -->
 	<ul id="inline_chart">
 		<li id = "prev_day"><button id = "prev_day_empty" ></button></li>
-		<li id = "chart_div" width="699px" style="width:699; height:320">Tracking stats down atm. Will be back up eventually.</li>
+		<li id = "chart_div">Tracking stats down atm. Will be back up eventually.</li>
 		<li id = "next_day"><button id = "next_day_empty" ></button></li>
 	</ul>
 	

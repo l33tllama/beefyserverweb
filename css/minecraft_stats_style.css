@@ -12,20 +12,21 @@ div#player_renders{
 	margin-bottom:-15px;
 	padding-left: 25px;
 }
-table.mcStatusTable{
-	border-radius: 4px;
-	padding-left: 25px;
-}
 table#mc_plugins{
 	font-size: 10pt;
 }
-#mc_players, #inline_chart, .mcStatusTable{
+#mc_players, #mcStatusTable{
 	width: 938px;
 	margin-left: -25px;
-	padding-left: 25px;
 }
 table#mc_players, ul#inline_chart{
 	background-color: #f3f3f3;
+}
+#inline_chart{
+	margin-left: -25px;
+	padding-left: 25px;
+	margin-right: -25px;
+	padding-right: 25px;
 }
 table#mc_players{
 	border-spacing: 0px;
@@ -43,6 +44,67 @@ td.mc_player h5{
 	margin: 0;
 	text-align: center;
 }
+ul#inline_chart {
+	list-style:none;
+	margin:0; padding:0;
+	position: relative;
+	height: 320px;
+}
+ul#inline_chart li {
+	position:relative;
+	float: left;	
+	margin-left: -1px;
+}
+li#chart_div{
+	width: 500px;
+	margin-left: 64px;
+}
+li.chart_tooltip{
+	padding: 2px;
+	width: 100px;
+}
+li#prev_day, li#next_day{
+	width: 32px;
+	height: 320px;
+	position: relative;
+}
+li#prev_day{
+	/* float: left; */
+}
+li#next_day{
+	/* float: right; */
+}
+button#prev_day, button#next_day{
+	width: 32px;
+	height: 320px;
+	border: none;
+}
+button#prev_day_empty, button#next_day_empty{
+	width: 32px;
+	height: 320px;
+	background-color: rgba(0, 0, 0, 0);
+	border: none;
+}
+button#prev_day{
+	background: url("../images/minecraft/left-button-deselect.png") no-repeat 0 0 ;
+}
+button#next_day{
+	background: url("../images/minecraft/right-button-deselect.png") no-repeat 0 0 ;
+}
+button#prev_day:hover{
+	background: url("../images/minecraft/left-button.png") no-repeat 0 0 ;
+}
+
+button#next_day:hover{
+	background: url("../images/minecraft/right-button.png") no-repeat 0 0 ;
+}
+button#next_day:active{
+	background: url("../images/minecraft/right-button-deselect.png") no-repeat 0 0 ;
+}
+button#prev_day:active{
+	background: url("../images/minecraft/left-button-deselect.png") no-repeat 0 0 ;
+}
+
 td.mc_player#n0{
 	animation-duration: 0.5s;
 	-webkit-animation-duration: 0.5s;
@@ -157,57 +219,4 @@ td.mc_player#n15{
 	to{
 		opacity: 1;
 	}
-}
-ul#inline_chart, ul#inline_chart li{
-}
-ul#inline_chart li {
-	display:inline-block;
-	min-height: 320px;
-	vertical-align: top;
-	
-	/*Hack for IE7 + ?*/
-	zoom: 1;
-	display: inline;
-}
-li#chart_div{
-	/*width: 600px;*/
-}
-li.chart_tooltip{
-	padding: 2px;
-	width: 100px;
-}
-li#prev_day, li#next_day{
-	width: 32px;
-	height: 320px;
-
-}
-button#prev_day, button#next_day{
-	width: 32px;
-	height: 320px;
-	border: none;
-}
-button#prev_day_empty, button#next_day_empty{
-	width: 32px;
-	height: 320px;
-	background-color: rgba(0, 0, 0, 0);
-	border: none;
-}
-button#prev_day{
-	background: url("../images/minecraft/left-button-deselect.png") no-repeat 0 0 ;
-}
-button#next_day{
-	background: url("../images/minecraft/right-button-deselect.png") no-repeat 0 0 ;
-}
-button#prev_day:hover{
-	background: url("../images/minecraft/left-button.png") no-repeat 0 0 ;
-}
-
-button#next_day:hover{
-	background: url("../images/minecraft/right-button.png") no-repeat 0 0 ;
-}
-button#next_day:active{
-	background: url("../images/minecraft/right-button-deselect.png") no-repeat 0 0 ;
-}
-button#prev_day:active{
-	background: url("../images/minecraft/left-button-deselect.png") no-repeat 0 0 ;
 }

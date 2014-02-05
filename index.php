@@ -176,6 +176,18 @@ if($selected_page != NULL){
 	}
 ?>
 		<title>Beefy Server | <?php echo $current_page_name; ?></title>
+		<!-- Pingdom script -->
+		<script>
+var _prum = [['id', '51bbc8adabe53d0436000000'],
+             ['mark', 'firstbyte', (new Date()).getTime()]];
+(function() {
+    var s = document.getElementsByTagName('script')[0]
+      , p = document.createElement('script');
+    p.async = 'async';
+    p.src = '//rum-static.pingdom.net/prum.min.js';
+    s.parentNode.insertBefore(p, s);
+})();
+		</script>
 	</head>
 	<body>
 		<div id="title">

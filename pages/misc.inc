@@ -2,9 +2,6 @@
     <p class="headingText">Misc Stuff</p>
     <div class="contentText">
 	<p>Various small things put here for the purposes of learning and mucking about, which is important to do. </p>
-	<!--<audio controls>
-		<source src="./audio/adam freeland - burn the clock.mp3" type="audio/mpeg">
-	</audio>-->
 	<p class="subHeadingText" id="bob">Server-side text-to speech</p>
 	Enter text to to make server speak aloud!<br/>
 	Text will be spoken aloud server-side using a text-to-speech call (festival --tts). Annoy me untill I unplug the speakers!<br/>
@@ -57,4 +54,3 @@
 	<p class="subHeadingText"><a href="?page=steam_games">Steam Games Picker</a></p>
     </div>
 </div>
-<!-- TODO: Remember!! Make the Steam Game chooser using Google Images API for maximum awesome. -->

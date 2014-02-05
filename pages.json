@@ -12,7 +12,7 @@
 	"link_name" : "Minecraft",
 	"query_name" : "minecraft_main",
 	"type" : "local",
-	"scripts" : ["jsapi.js", "jquery-1.9.1.js", "mc_log_chart.js"],
+	"scripts" : ["jsapi.js", "jquery-1.9.1.min.js", "mc_log_chart.js"],
 	"stylesheets" : ["default.css", "minecraft_stats_style.css", "normalize.css"],
 	"location" : "minecraft.inc",
 	"haschild" : "true",
@@ -44,7 +44,8 @@
 		"link_name": "My Steam Games Picker",
 		"query_name" : "steam_games",
 		"type" : "local",
-		"stylesheets" : ["default.css", "normalize.css"],
+		"scripts" : ["jquery-1.9.1.min.js", "w3cookies.js"],
+		"stylesheets" : ["steam_games.css", "default.css", "normalize.css" , "animate.css/animate.min.css" ],
 		"location" : "/misc/steam_games.php",
 		"haschild" : "false"
 	}]
