@@ -10,9 +10,9 @@ html{
 	/* overflow-y: scroll; */
 }
 #content browser {
- margin-right: -14px !important;
- overflow-y: scroll;
- overflow-x: hidden;
+	 margin-right: -14px !important;
+	 overflow-y: scroll;
+	 overflow-x: hidden;
 }
 /* TODO: use less alpha colours and maybe different colour scheme */
 body{
@@ -27,18 +27,19 @@ body{
 	/*overflow-y: scroll;*/	
 }
 div#title{
-	background: rgb(0, 0, 0);
-	background: rgba(0, 0, 0, 0.75); /*background color of menu header (1st level)*/	
+	background: rgb(236, 235, 233);
+	background: rgba(236, 235, 233, 0.74); /*background color of menu header (1st level)*/	
 	padding: 0px 0px 20px 0px;
 	position:relative;
 	padding-left: 20px;
 	margin: 0;
 	color: #fff;
-	color: rgba(255, 255, 255, 0.65);	
-	text-shadow: 0 1px 2px #ccc;
+	text-align: center;
+	color: #45484F;	
+	text-shadow: 0 3px 3px #B2AEAB;
 	height: 140px;
 	z-index: -1;
-	overflow:hidden;
+	overflow:hidden;	
 }
 div#title h1{
 	font-size: 155px;
@@ -46,6 +47,7 @@ div#title h1{
 	font-weight:bold;
 	padding: 0;
 	font-family: sans-serif;
+	
 }
 div#title p{
 	position: absolute;
@@ -56,14 +58,18 @@ div#title p{
 	padding-left: 5px;
 }
 div#navigation{
+	margin-top: -35px;
 	width: 100%;
 	float: left;
+	border: 3px solid rgb(23, 24, 28);
+	border-radius: 5px;
 	/*height: 35px;*/
-	background-color: rgb(77,23,12);
-	background-color: rgba(77, 23, 12, 0.85);
-		-webkit-box-shadow: 2px 2px 10px rgba(77, 23, 12, 0.6);
-	-moz-box-shadow:    2px 2px 10px rgba(77, 23, 12, 0.6);
-	box-shadow:         2px 2px 10px rgba(77, 23, 12, 0.6);	
+	/* Old color: rgb(77, 23, 12) */
+	background-color: rgb(122, 29, 12);
+	background-color: rgba(122, 29, 12, 0.75);
+	-webkit-box-shadow: 2px 2px 10px rgb(23, 24, 28);
+	-moz-box-shadow:    2px 2px 10px rgb(23, 24, 28);
+	box-shadow:         2px 2px 10px rgb(23, 24, 28);	
 }
 ul.navMenu, ul.navMenu ul {
 	list-style:none;
@@ -73,7 +79,7 @@ ul.navMenu, ul.navMenu ul {
 }
 ul.navMenu li{
 	position:relative;
-	float: left;	
+	float: left;
 	margin-left: -1px;	
 }
 ul.navMenu li a{
@@ -103,8 +109,8 @@ ul.navMenu ul li a{
 	min-width: 150px;
 	height: auto;
 	padding-bottom: 5px;
-	background-color: rgb(77, 23, 12);
-	background-color: rgba(77, 23, 12, 0.85);
+	background-color: rgb(122, 29, 12);
+	background-color: rgba(122, 29, 12, 0.85);
 }
 ul.navMenu ul ul{
 	left: 100%;
@@ -118,18 +124,16 @@ ul.navMenu li:hover > ul {
 	max-width: 200px;
 }
 ul.navMenu li:hover{
-	background-color: rgb(77, 23, 12);
+	background-color: rgb(122, 29, 12);
 	/*background-color: rgba(77, 23, 12, 1);*/
 }
 div#main{
 	position:relative;
 	margin: 0 auto;
-	margin-top: 35px;
-	padding-top: 0;
+	margin-top: 31px;
+	padding-top: 3px;
 	min-width: 960px;
 	max-width: 960px;
-	
-	
 }
 #main a:hover{
 	border-radius: 5px;
@@ -137,30 +141,43 @@ div#main{
 }
 
 div#main_content{
-	margin: 0px 10px 0px 10px;
+	margin: 5px 10px 0px 10px;
 	padding: 0px 10px 5px 10px;
-	background-color: #ffffff;
-	border: 1px #bbbbbb solid;
+	background-color: rgba(255,255,255,1);
 	border-bottom-left-radius: 7px;
 	border-bottom-right-radius: 7px;
-	-webkit-box-shadow: 2px 2px 10px rgba(77, 23, 12, 0.6);
-	-moz-box-shadow:    2px 2px 10px rgba(77, 23, 12, 0.6);
-	box-shadow:         2px 2px 10px rgba(77, 23, 12, 0.6);
+	-webkit-box-shadow: 2px 2px 10px rgba(122, 29, 12, 0.55);
+	-moz-box-shadow:    2px 2px 10px rgba(122, 29, 12, 0.55);
+	box-shadow:         2px 2px 10px rgba(122, 29, 12, 0.55);
+}
+#main_content, #footer {
+		border: 1px #45484F solid;
+}
+div.post{
+/*margin-left: -10px;*/
+	-webkit-box-shadow: 2px 2px 7px rgba(122, 29, 12, 0.55);
+	-moz-box-shadow:    2px 2px 7px rgba(122, 29, 12, 0.55);
+	box-shadow:         2px 2px 7px rgba(122, 29, 12, 0.55);
+	background-color: rgba(255,255,255,0);
 	
+}
+div.post, p.headingText{
+	border-top-left-radius: 7px;
+	border-top-right-radius: 7px;
 }
 
 div.post p.headingText{
-	background-color: rgba(77, 23, 12, 0.8);
-	margin: 10px -11px 10px -11px;
+	background-color: rgba(122, 29, 12, 0.8);
+	/*margin: 10px -11px 10px -11px;*/
 	padding: 5px 15px 5px 15px;
-	border-top: 1px solid rgb(77, 23, 12);
-	border-bottom: 1px solid rgb(77, 23, 12);
+	border-top: 1px solid rgb(122, 29, 12);
+	border-bottom: 1px solid rgb(122, 29, 12);
 	font-size: 16pt;
 	color: #fff;
 	text-shadow: -1px 0px 2px #bbb;
-	-webkit-box-shadow: inset 0px 0px 7px rgba(77, 23, 12, 1);
-	-moz-box-shadow:    inset 0px 0px 7px rgba(77, 23, 12, 1);
-	box-shadow:         inset 0px 0px 7px rgba(77, 23, 12, 1);
+	-webkit-box-shadow: inset 0px 0px 6px rgb(122, 29, 12);
+	-moz-box-shadow:    inset 0px 0px 6px rgb(122, 29, 12);
+	box-shadow:         inset 0px 0px 6px rgb(122, 29, 12);
 	font-family:sans-serif;
 	
 }
@@ -174,17 +191,19 @@ div.post p.subHeadingText{
 	margin: 2px 0 2px 0;
 }
 div#footer{
-    background-color: rgb(77, 23, 12);
-	background-color: rgba(77, 23, 12, 0.25);
+    background-color: rgb(255, 253, 253);
+	/*background-color: rgba(122, 29, 12, 0.05);*/
 	/*float:bottom;*/
 	bottom: 0;
 	padding: 2px;
-	text-align:right;
-	color: rgb(77, 23, 12);
-	font-size: 9pt;
-	margin: 10px -11px -6px -10px;
+	text-align: center;
+	color: rgb(23, 24, 28);
+	font-size: 8pt;
+	margin: 10px -11px -6px -11px;
 	position: relative;
-	border: 1px solid rgb(77, 23, 12);
 	border-bottom-left-radius: 6px;
 	border-bottom-right-radius: 6px;
+}
+td.align_right{
+ 	text-align: right;
 }

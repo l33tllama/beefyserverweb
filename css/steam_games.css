@@ -7,9 +7,83 @@ input, textarea, select, button  {
           box-sizing: border-box;
   padding-bottom: 5px;
 }
-label{
+/* Keep login form aligned properly */
+#login_form label{
 	width: 150px;
 	float: left;
+}
+table#current_games{
+	border: 1px solid #000;
+	padding: 5px;
+	background-color: #444;
+}
+table#current_games td{
+	background-color: #000;
+	padding: 0;
+	
+}
+.game_container{
+	position: relative;
+	width: 154px;
+	height: 125px;
+	opacity: 0.85;
+	z-index: 25;
+}
+.starred_game, .game_details_box{
+	padding: 2px;
+	margin: 0;
+	overflow: hidden;
+	width: 155px;
+	font-size: 8pt;
+	text-shadow: 0 1px 1px #000;
+}
+.starred_game{
+	border: 1px rgba(32, 0, 0, 0.35) solid;
+	border: 1px #000 solid;
+	background-color: rgba(0, 0, 0, 0.65);
+	position: absolute;
+	height: 25px;
+	color: #fff;
+	bottom: 0;
+}
+.played_button, .played_label{
+	width: auto;
+}
+div.game_details_box{
+	border: 1px rgba(255, 12, 12, 0.35) solid;
+	border: 1px #000 solid;
+	background-color: rgba(0, 0, 0, 0.65);
+	position: absolute;
+	z-index: 20;
+	height: 37pt;
+	top: 0;
+}
+div.game_image{
+	position: absolute;
+	margin: -125px 0 0 0;
+	width: 154px;
+	height: 125px;
+	text-align: center;
+	display: table;
+	overflow: hidden;
+}
+div.game_image div {
+	/*border: 1px solid #f0f;*/
+	display: table-cell;
+	vertical-align: middle;
+}
+p.game_name, p.game_category {
+	margin-top: 0;
+	padding-top: 1px;
+	margin-bottom: 1px;
+	padding-bottom: 1px;
+	color: #fff;	
+}
+p.game_name{
+	/*text-align: right;*/
+	font-weight: bold;
+}
+p.game_category{
 }
 #login_name{
   display:inline-block;

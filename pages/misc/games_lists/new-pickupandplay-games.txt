@@ -8,7 +8,6 @@ Droid Assault
 Eets Munchies
 FEZ
 Gratuitous Space Battles
-Guacamalee!
 Hero Academy
 Jack Lumber
 Little Inferno
@@ -23,5 +22,4 @@ Thomas Was Alone
 Titan Attacks
 Trials Evolution Gold
 Ultratron
-Unmechanical
 Zen Bound 2

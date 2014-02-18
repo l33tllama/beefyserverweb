@@ -2,12 +2,11 @@ a{
     text-decoration: none;   
 }
 .listItem-a, .listItem-b{ 
-    height: 155px;
-    width: 938px;
-    margin-left: -25px;
-    padding: 0;
-    margin-top: 0;
-    margin-bottom: 0;
+    height: 165px;
+    width: 918px;
+    margin-left: -15px;d
+    margin-top: -25px;
+    margin-bottom: -5px;
     display: inline-block;
     /*box-shadow: 0px -10px 10px #aaa;*/
 }
@@ -24,7 +23,8 @@ a{
     margin:0;
     padding-left: 30px;
     padding-right: 30px;
-    padding-top: 0;
+    padding-top: 5px;
+    padding-bottom: 5px;
     position: absolute;
     border-top-right-radius: 4px;
     border-bottom-right-radius: 4px;
@@ -37,12 +37,15 @@ a{
     box-shadow: inset -5px -5px 5px #eee;
 }
 .listItem-a img:hover, .listItem-b img:hover{
-    background-color: rgba(77, 23, 12, 0.85);
-    box-shadow: 3px 0px 5px rgba(77, 23, 12, 0.7);
+    background-color: rgba(122, 29, 12, 0.85);
+    padding-top: 5px;
+    margin-bottom: -20px;
+    padding-bottom: 0;
+    box-shadow: 3px 0px 5px rgba(122, 29, 12, 0.80);
     /*box-shadow: inset 0px 0px 10px rgba(77, 23, 12, 0.8);*/
 }
 .listItem-a img:hover + p.itemName, .listItem-b img:hover + p.itemName{
-    border-bottom: 5px solid rgba(77, 23, 12, 0.7);
+    border-bottom: 5px solid rgba(122, 29, 12, 0.85);
 }
 .listItem-a p.itemName, .listItem-b p.itemName {
     position: absolute;
@@ -71,14 +74,16 @@ a{
 }
 div.post{
     padding-top: 0;
-    margin-top: 0;   
+    margin-top: 0; 
 }
 div.contentText{
 	padding: 0;
-	margin:0;
+	margin-top: -27px;
+	margin-bottom: -5px;
 }
 div#main_content{
 	/*margin: 0px 10px 0px 18px;
 	padding: 0px 10px 5px 10px;*/
 	background-color: #eeeeee;
+	
 }

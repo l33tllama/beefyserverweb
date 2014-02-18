@@ -7,17 +7,17 @@ div#player_renders{
 	background-image: url('../images/minecraft/mc_bkgnd1.png');
 	background-position: 50% 100%;
 	border: 1px #f3f3f3 solid;
-	width: 939px;
-	margin: -25px;
-	margin-bottom:-15px;
-	padding-left: 25px;
+	width: 919px;
+	margin-left: -16px;
+	margin-bottom: -5px;
 }
 table#mc_plugins{
 	font-size: 10pt;
 }
 #mc_players, #mcStatusTable{
-	width: 938px;
-	margin-left: -25px;
+	width: 918px;
+	margin-left: -16px;
+	padding-left: 25px;
 }
 table#mc_players, ul#inline_chart{
 	background-color: #f3f3f3;

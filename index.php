@@ -154,7 +154,7 @@ if($selected_page != NULL){
     }
     if($current_page_file == false) {
         $current_page_file = "404.inc";	
-        $cssToLoad = array("default.css");
+        $cssToLoad = array("default.css", "normalize.css");
     }
     
 } else {
@@ -167,6 +167,7 @@ if($selected_page != NULL){
 ?>
 <html>
 	<head>
+		<meta charset="UTF-8">
 <?php 
 	foreach($jsToLoad as $jsFile){
 		echo "\t\t<script src=\"./js/" . $jsFile . "\"></script>\n";
@@ -194,8 +195,9 @@ var _prum = [['id', '51bbc8adabe53d0436000000'],
 			<h1>Beefy Server </h1>
 			<!--<p>Now with 25% more beef.</p>-->
 		</div>
-		<div id="navigation">
-			<ul class="navMenu">	
+		<div id="main">
+			<div id="navigation">
+				<ul class="navMenu">	
 <?php
 	$count = 0;
 	foreach($all_pages as $page){
@@ -247,10 +249,8 @@ var _prum = [['id', '51bbc8adabe53d0436000000'],
 		// echo "\t\t\t\t\t\t<img class=\"separator\" src=\"./images/separator.png\"/></li>\n";
 	}
 ?>
-		</ul> <!-- end nav list -->
-		</div> <!-- end navigation div -->	
-		
-		<div id="main">
+				</ul> <!-- end nav list -->	
+			</div> <!-- end navigation div -->	
 			<div id="main_content">	
 				<!-- TODO: Navigation indicator in main content section -->
 <?php include_once("./pages/" . $current_page_file);?>
