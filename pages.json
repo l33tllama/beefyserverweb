@@ -45,8 +45,17 @@
 		"query_name" : "steam_games",
 		"type" : "local",
 		"scripts" : ["jquery-1.9.1.min.js", "w3cookies.js"],
-		"stylesheets" : ["steam_games.css", "default.css", "normalize.css" , "animate.css/animate.min.css" ],
+		"stylesheets" : ["default.css", "steam_games.css", "normalize.css" , "animate.css/animate.min.css" ],
 		"location" : "/misc/steam_games.php",
+		"haschild" : "false"
+	},
+	{
+		"link_name": "Text to Speech (Server-side)",
+		"query_name" : "tts_server",
+		"type" : "local",
+		"scripts" : ["jquery-1.9.1.min.js", "w3cookies.js"],
+		"stylesheets" : ["default.css", "steam_games.css", "normalize.css" , "animate.css/animate.min.css" ],
+		"location" : "/misc/text_to_speech.inc",
 		"haschild" : "false"
 	}]
 },

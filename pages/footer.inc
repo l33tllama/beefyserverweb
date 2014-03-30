@@ -7,9 +7,10 @@
 <small>
     <i><a href="http://www.brainyquote.com/quotes_of_the_day.html" target="_blank">more Quotes</a></i>
 </small><br/>
-I have a <a href="https://github.com/l33tllama">GitHub</a>, it's probably useful.<br/>
-<a href="http://www.beyondsecurity.com/vulnerability-scanner-verification/l33tllama.no-ip.org">
-	<img src="https://secure.beyondsecurity.com/verification-images/l33tllama.no-ip.org/vulnerability-scanner-2.gif" alt="Website Security Test" />
-</a>
-<br/>
-<?php $self = "index.php"; echo "Site last modified: " . date ("F d Y H:i.", filemtime($self));?><br/>
+My <a href="https://github.com/l33tllama">GitHub</a>, where I share my source.<br/>
+<?php 
+$latest_results = "";
+exec("sh /home/leo/public_html/find_last_modified_fast.sh", $latest_results);
+echo "Site last modified: " . substr($latest_results[0], 0, 16);
+
+/*$self = "index.php"; echo "Site last modified: " . date ("F d Y H:i.", filemtime($self));*/?><br/>

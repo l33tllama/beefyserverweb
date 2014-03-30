@@ -1,7 +1,12 @@
 Beat Hazard
+Blocks That Matter
+Cargo Commander
 Cave Story+
 EDGE
+Electronic Super Joy
+FTL
 Harvest Massive Encounter
+Hotline Miami
 Osmos
 Puddle
 Revenge of the Titans
@@ -10,5 +15,7 @@ RUSH
 Steel Storm: Burning Retribution
 Super Hexagon
 Super Meat Boy
+The Swapper
+Trine 2
 World of Goo
 Worms Reloaded

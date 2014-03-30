@@ -53,7 +53,7 @@ played_games_file = open(played_games, "r")
 # Connect to mongo server
 mongo_client = MongoClient('localhost', 27017)
 # Get reference to "games_lists" DB
-mongo_games_lists = mongo_client.games_lists
+users_games_lists = mongo_client.games_lists['users']
 
 games_lists = [	[new_puap_linux_file, "unplayed", "new", "linux" ],
 			[new_puap_win_file, "unplayed", "new", "win" ],
@@ -71,9 +71,10 @@ games_lists = [	[new_puap_linux_file, "unplayed", "new", "linux" ],
 			[ ["dummy"], "dummy" ] ]
 
 # Unplayed, current and played game lists
-mongo_unplayed_game_list = mongo_games_lists['unplayed_puap_games']
-mongo_current_game_list = mongo_games_lists['current_puap_games']
-mongo_played_game_list = mongo_games_lists['played_puap_games']
+users_games_lists.update({'username' : 'leo'}, {		'username' : 'leo',
+								'password_md5': '3bb7b584635d792fd74778558371bf37', 
+								'session_id': '',
+								'steam_puap_games' : []},True)
 
 #Test asdasd
 
@@ -81,6 +82,8 @@ mongo_played_game_list = mongo_games_lists['played_puap_games']
 tmp_current_game_list = []
 tmp_played_game_list = []
 tmp_unplayed_game_list = []
+
+tmp_game_list = []
 
 print "################################"
 print "#### STARTING NEW GAME DUMP ####"
@@ -103,66 +106,39 @@ for game_list in games_lists:
 			game_added = False
 			list_name = "None"
 			
-			# Check if not already on the list
-			if game_list[1] == "current":
-				list_name = "current"
-				if list(mongo_current_game_list.find({"GameName" : game_name})) == []:
-					print("Game not on current list: '" + game_name + "', adding to current list")
-					tmp_current_game_list.append( {"GameName" : game_name, 
+			# If list is unplayed, add to unplayed list with 
+			if (game_list[1] == "unplayed") or (game_list[1] == "current"):
+				if game_name == "":
+					print ("Empty game")
+				else:
+					print ("Adding game " + game_name + " to list " + game_list[1] + " (" + game_list[2] + "/" + game_list[3] + ")")
+					if game_list[1] == "unplayed":
+						tmp_game_list.append( {		"GameName" : game_name, 
 													"GameNameClean" : game_name_clean, 
 													"Category" : game_list[2], 
-													"Platform" : game_list[3]} )
-					game_added = True
+													"Platform" : game_list[3],
+													"PlayedState": game_list[1]} )
+					elif game_list[1] == "current":
+						date_added_str = "19-3-2014 12:00"
+						tmp_game_list.append( {		"GameName" : game_name, 
+													"GameNameClean" : game_name_clean, 
+													"Category" : game_list[2], 
+													"Platform" : game_list[3],
+													"Starred" : False,
+													"PlayedState": game_list[1],
+													"DateAdded" : date_added_str} )
+
+			# If list is played, no platform info available atm, also category and stared fields are not needed
 			elif game_list[1] == "played":
-				list_name = "played"
-				if list(mongo_played_game_list.find({"GameName" : game_name})) == []:
-					print("Game not on played list: '" + game_name + "', adding to played list")
-					tmp_played_game_list.append({"GameName" : game_name, 
-														"GameNameClean" : game_name_clean})
-					game_added = True
-			elif game_list[1] == "unplayed":
-				list_name = "unplayed"
-				if list(mongo_unplayed_game_list.find({"GameName" : game_name})) == []:
-					print("Game not on unplayed list: '" + game_name + "', adding to unplayed list")
-					tmp_unplayed_game_list.append( { "GameName" : game_name, 
-														"GameNameClean" : game_name_clean, 
-														"Category" : game_list[2], 
-														"Platform" : game_list[3] } )
-					game_added = True
-			
-			# Skip (not needed other than debugging)
-			if game_added is False:
-				if list_name == "None":
-					print "Bad list name!"
-				else:
-					print("Game already on " + list_name + ": '" + game_name + "', not adding again")
-	
+				print("Adding game " + game_name + " to played list")
+				tmp_game_list.append({		"GameName" : game_name, 
+											"GameNameClean" : game_name_clean,
+												"PlayedState": game_list[1]})	
 		# Close file
 		game_list[0].close()
-		
-# Insert new current games if not empty
-if tmp_current_game_list == []:
-	print "All games were already on the current games list, or something broke. Not updating collection."
-else:
-	print("Current game list data to insert: ")
-	pprint(tmp_current_game_list)
-	mongo_current_game_list.insert(tmp_current_game_list)
 
-# Insert new played games if not empty
-if tmp_played_game_list == []:
-		print "All games were already on the played list, or something broke. Not updating collection."
-else:
-	print("Played game list: data to insert: ")
-	pprint(tmp_played_game_list)
-	mongo_played_game_list.insert(tmp_played_game_list)
-
-# Insert new unplayed games if not empty
-if tmp_unplayed_game_list == []:
-		print "All games were already on the unplayed list, or something broke. Not updating collection."
-else:
-	print("Unplayed game list data to insert: ")
-	pprint(tmp_unplayed_game_list)
-	mongo_unplayed_game_list.insert(tmp_unplayed_game_list)
+# Update steam games list
+users_games_lists.update({'username' : 'leo'}, {'$set' : {'steam_puap_games' : tmp_game_list}}, False)
 
 
 

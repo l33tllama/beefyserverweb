@@ -20,3 +20,4 @@ Hammerflight
 EDGE
 NightSky
 Super Meat Boy
+Pyroblazer

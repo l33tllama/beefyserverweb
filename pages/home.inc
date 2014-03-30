@@ -19,11 +19,7 @@
 			<li>If you find a cool plugin on craftbukkit or elsewhere, feel free to ask me to add it! It's pretty simple.</li>
 			<li>New users need to ask for build rights. Most should know who/how to contact me.</li>
 		</ul>
-		<p class="subHeadingText"><a href="http://<?php echo $_SERVER['SERVER_NAME'];?>:4040">Subsonic</a> - ALL of my legally-acquired music</p>
-		<ul>
-			<li>Guest access (can't modifiy anything): u:guest p:12345</li>
-		</ul>	
-		<p class="subHeadingText">Totally not an outdated VNC server, nope.</p>
+		<p class="subHeadingText">There might be a Subsonic server running on the default port..</p><!--L33T haxors: username: guest, pw: 12345 -->
 	</div>		
 </div>
 <div class="post">

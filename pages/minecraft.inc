@@ -27,7 +27,7 @@ try {
 	<p class="headingText">Minecraft Server Status</p>
 	<div class="contentText">
 		<div class="section-a">
-			WIP!<br/>
+			This page is kinda ugly and a WIP, but it works!<br/>
 			<a href="<?php echo "http://".$_SERVER['SERVER_NAME'] . ":8123";?>"/><img src="./images/link_icons/dynmap.png"/>DynMap</a><br/><br/>
 		</div>
 <?php if($server_up == TRUE){

@@ -10,5 +10,6 @@ Snapshot
 Snuggle Truck
 Space Pirates and Zombies
 SpaceChem
+Spectraball
 Splice
 Toki Tori

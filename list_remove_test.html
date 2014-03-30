@@ -1,0 +1,42 @@
+<html>
+	<head><title>jQuery list save and add test</title>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<body>
+		<h1>A list of stuff</h1>
+		<ul id="list_1">
+			<li><span id="l1s1">Testing s1 1</span></li>
+			<li><span id="l1s2">Testing s1 2</span></li>
+			<li><span id="l1s3">Testing s1 3</span></li>
+		</ul>
+		<ul id="list_2">
+			<li><span id="l2s1">Testing s2 1</span></li>
+			<li><span id="l2s2">Testing s2 2</span></li>
+			<li><span id="l2s3">Testing s2 3</span></li>
+		</ul>
+		<input type="button" value="Click me?" id="list_element_moverer"/>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				$("#list_element_moverer").click(function(){
+					//alert("Clicked");
+					var ls1s1 = $("#l1s1");
+					var ls2 = $("#list_2");
+					var ls1i1HTML = ls1s1.parent().html();
+					//alert(ls1i1HTML);
+					
+					ls1s1.fadeOut('slow', function(){
+						ls1s1.parent().remove();
+						ls2.append("<li>" + ls1i1HTML + "</li>");
+						ls1s1 = $("#l1s1");
+						ls1s1.hide();
+						ls1s1.fadeIn('slow');
+						//ls2.append("<li><span id=\"asdsads\">Testing $%##$</span></li>");
+					});
+					
+					
+					//l1_1.remove();
+					//$("#list_2").append(l1_1);
+				});
+			});
+		</script>
+	</body>
+</html>

@@ -21,10 +21,6 @@ body{
 	margin: 0px;
 	min-width: 600px;
 	padding: 0;
-	/*
-	overflow: auto; */
-	
-	/*overflow-y: scroll;*/	
 }
 div#title{
 	background: rgb(236, 235, 233);
@@ -47,7 +43,8 @@ div#title h1{
 	font-weight:bold;
 	padding: 0;
 	font-family: sans-serif;
-	
+	text-transform:uppercase; 
+	letter-spacing:-16px;
 }
 div#title p{
 	position: absolute;
@@ -59,23 +56,29 @@ div#title p{
 }
 div#navigation{
 	margin-top: -35px;
-	width: 100%;
+/* 	width: 100%; */
 	float: left;
-	border: 3px solid rgb(23, 24, 28);
-	border-radius: 5px;
+	margin-left: 10px;
+	margin-right: 30px;
+	min-width: 940px;
+	max-width: 940px;
+	border-top-left-radius: 7px;
+	border-top-right-radius: 7px;
+/* 	border: 1px solid rgb(23, 24, 28); */
+/* 	border-radius: 5px; */
 	/*height: 35px;*/
 	/* Old color: rgb(77, 23, 12) */
 	background-color: rgb(122, 29, 12);
 	background-color: rgba(122, 29, 12, 0.75);
-	-webkit-box-shadow: 2px 2px 10px rgb(23, 24, 28);
+	/*-webkit-box-shadow: 2px 2px 10px rgb(23, 24, 28);
 	-moz-box-shadow:    2px 2px 10px rgb(23, 24, 28);
-	box-shadow:         2px 2px 10px rgb(23, 24, 28);	
+	box-shadow:         2px 2px 10px rgb(23, 24, 28);	*/
 }
 ul.navMenu, ul.navMenu ul {
 	list-style:none;
 	margin:0; padding:0;
 	position: relative;
-	z-index: 1;	
+	z-index: 99;	
 }
 ul.navMenu li{
 	position:relative;
@@ -131,7 +134,6 @@ div#main{
 	position:relative;
 	margin: 0 auto;
 	margin-top: 31px;
-	padding-top: 3px;
 	min-width: 960px;
 	max-width: 960px;
 }
@@ -141,8 +143,8 @@ div#main{
 }
 
 div#main_content{
-	margin: 5px 10px 0px 10px;
-	padding: 0px 10px 5px 10px;
+	margin: 0px 10px 0px 10px;
+	padding: 1px 10px 5px 10px;
 	background-color: rgba(255,255,255,1);
 	border-bottom-left-radius: 7px;
 	border-bottom-right-radius: 7px;
@@ -151,7 +153,7 @@ div#main_content{
 	box-shadow:         2px 2px 10px rgba(122, 29, 12, 0.55);
 }
 #main_content, #footer {
-		border: 1px #45484F solid;
+/* 	border: 1px #45484F solid; */
 }
 div.post{
 /*margin-left: -10px;*/
@@ -191,7 +193,7 @@ div.post p.subHeadingText{
 	margin: 2px 0 2px 0;
 }
 div#footer{
-    background-color: rgb(255, 253, 253);
+    background-color: rgb(255, 253, 247);
 	/*background-color: rgba(122, 29, 12, 0.05);*/
 	/*float:bottom;*/
 	bottom: 0;
@@ -199,10 +201,10 @@ div#footer{
 	text-align: center;
 	color: rgb(23, 24, 28);
 	font-size: 8pt;
-	margin: 10px -11px -6px -11px;
+	margin: 10px -10px -6px -10px;
 	position: relative;
-	border-bottom-left-radius: 6px;
-	border-bottom-right-radius: 6px;
+	/*border-bottom-left-radius: 6px;
+	border-bottom-right-radius: 6px;*/
 }
 td.align_right{
  	text-align: right;

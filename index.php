@@ -170,7 +170,7 @@ if($selected_page != NULL){
 		<meta charset="UTF-8">
 <?php 
 	foreach($jsToLoad as $jsFile){
-		echo "\t\t<script src=\"./js/" . $jsFile . "\"></script>\n";
+		echo "\t\t<script type = \"text/javascript\" src=\"./js/" . $jsFile . "\"></script>\n";
 	}
 	foreach($cssToLoad as $cssFile){
 		echo "\t\t<link rel=\"stylesheet\" type=\"text/css\" href=\"./css/$cssFile\"/>\n";
